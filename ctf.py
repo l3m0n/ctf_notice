@@ -59,7 +59,8 @@ def main():
   start = time2stamp(timeup(now_time))
   finish = time2stamp(timeup(now_time,100))
   data = get_data(start,finish,now_time)
-  weixin.send(data)
+  if data.strip() != '':
+    weixin.send(data)
 
 if __name__ == '__main__':
   main()
